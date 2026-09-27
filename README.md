@@ -223,3 +223,108 @@ chmod +x check-tools.sh
                     │
              Ready to Develop
 ```
+
+
+# Google Antigravity CLI — Windows
+
+The repository also includes a PowerShell installer for the **Google Antigravity CLI**.
+
+## Installation
+
+Open PowerShell in the project directory and run:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+Then run the installer:
+
+```powershell
+.\install-antigravity.ps1
+```
+
+The installer will:
+
+1. Check that the system is running Windows
+2. Check internet connectivity
+3. Check for an existing Antigravity installation
+4. Download the official Antigravity installer
+5. Install Antigravity CLI
+6. Refresh the PATH
+7. Verify the `agy` command
+8. Display the installed version
+
+---
+
+## Verify Installation
+
+After installation, run:
+
+```powershell
+agy --version
+```
+
+If the command is not recognized immediately, **close PowerShell and open a new PowerShell window**, then run:
+
+```powershell
+agy --version
+```
+
+---
+
+## Start Antigravity
+
+Launch the CLI with:
+
+```powershell
+agy
+```
+
+---
+
+## Quick Install
+
+For a direct installation using the official installer:
+
+```powershell
+irm https://antigravity.google/cli/install.ps1 | iex
+```
+
+Then verify:
+
+```powershell
+agy --version
+```
+
+---
+
+## Complete Windows Setup
+
+If you want to set up the complete development environment:
+
+```powershell
+.\check-tools.ps1
+.\install-antigravity.ps1
+```
+
+This gives you:
+
+```text
+Windows
+   │
+   ├── Git
+   ├── Node.js
+   ├── npm
+   └── Google Antigravity CLI
+           │
+           └── agy
+```
+
+### Windows Toolchain
+
+| Tool            | Installation Script       |
+| --------------- | ------------------------- |
+| Git             | `check-tools.ps1`         |
+| Node.js         | `check-tools.ps1`         |
+| npm             | `check-tools.ps1`         |
+| Antigravity CLI | `install-antigravity.ps1` |
